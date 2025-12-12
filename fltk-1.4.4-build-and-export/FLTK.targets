@@ -1,0 +1,62 @@
+﻿<Project>
+	<PropertyGroup>
+		<FltkIncDir>$(MSBuildThisFileDirectory)include</FltkIncDir>
+		<FltkLibDir>$(MSBuildThisFileDirectory)$(Platform)\$(Configuration)\lib</FltkLibDir>
+	</PropertyGroup>
+
+	<!-- DEBUG BUILD -->
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<AdditionalIncludeDirectories>
+				$(FltkIncDir);%(AdditionalIncludeDirectories)
+			</AdditionalIncludeDirectories>
+		</ClCompile>
+		<Link>
+			<AdditionalLibraryDirectories>
+				$(FltkLibDir);%(AdditionalLibraryDirectories)
+			</AdditionalLibraryDirectories>
+		</Link>
+	</ItemDefinitionGroup>
+
+	<ItemDefinitionGroup Condition="'$(Configuration)' == 'Release'">
+		<Link>
+			<AdditionalDependencies>
+				fltk.lib;
+				fltk_forms.lib;
+				fltk_gl.lib;
+				fltk_images.lib;
+				fltk_jpeg.lib;
+				fltk_png.lib;
+				fltk_z.lib;		
+				comctl32.lib;
+				ws2_32.lib;
+				gdiplus.lib;
+				opengl32.lib; 
+				glu32.lib;		
+				$(CoreLibraryDependencies);
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+
+	<ItemDefinitionGroup Condition="'$(Configuration)' == 'Debug'">
+		<Link>
+			<AdditionalDependencies>
+				fltkd.lib;
+				fltk_formsd.lib;
+				fltk_gld.lib;
+				fltk_imagesd.lib;
+				fltk_jpegd.lib;
+				fltk_pngd.lib;
+				fltk_zd.lib;		
+				comctl32.lib;
+				ws2_32.lib;
+				gdiplus.lib;
+				opengl32.lib; 
+				glu32.lib;		
+				$(CoreLibraryDependencies);
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+</Project>

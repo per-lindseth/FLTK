@@ -39,3 +39,12 @@
 
 # debug information files
 *.dwo
+
+#Visual Studio files
+/.vs/
+
+# CMake files
+**/build/
+
+# Nuget
+*.nupkg
