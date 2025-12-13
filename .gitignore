@@ -48,3 +48,4 @@
 
 # Nuget
 *.nupkg
+*.snupkg

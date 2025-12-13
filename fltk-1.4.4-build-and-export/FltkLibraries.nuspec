@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
-<package>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FLTK</id>
     <version>1.4.4</version>
-    <authors>http://fltk.org/</authors>
-    <owners>http://fltk.org/</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Static and dynamic libraries for C++ projects.</description>
-    <tags>native c++ library dll lib</tags>
+    <authors>Per B. Lindseth, http://fltk.org/</authors>
+    <readme>readme.md</readme>
+    <description>See https://www.fltk.org/</description>
+    <tags>native c++ library lib examples</tags>
   </metadata>
   <files>
     <file src="..\fltk-1.4.4\build\lib\Debug\*.lib" target="build\native\x64\debug\lib\" />
+    <file src="..\fltk-1.4.4\build\lib\Debug\*.pdb" target="build\native\x64\debug\lib\" />
     <file src="..\fltk-1.4.4\build\lib\Release\*.lib" target="build\native\x64\release\lib\" />
-    <file src="FLTK.targets" target="build\native\FLTK.targets" />
+    <file src="FLTK.targets" target="build\native\" />
+     <file src="readme.md" target="" /> 
 	<!-- Headers -->
     <file src="..\fltk-1.4.4\FL\*.h" target="build\native\include\FL\" />
     <file src="..\fltk-1.4.4\build\FL\*.h" target="build\native\include\FL\" />
